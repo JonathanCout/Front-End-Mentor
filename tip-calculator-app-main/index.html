@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+</head>
+
+<body>
+  <div class="card">
+    <img src="./images/logo.svg" alt="logo Splitter">
+    <div class="calculator">
+      <form id="form">
+        <div>
+          <legend>Bill</legend>
+          <input type="number" name="billCost" id="billCost" placeholder="0">
+        </div>
+        <div>
+          <legend>Select Tip %</legend>
+          <div id="buttons">
+            <button data-btn>5%</button>
+            <button data-btn>10%</button>
+            <button data-btn>15%</button>
+            <button data-btn>25%</button>
+            <button data-btn>50%</button>
+            <input data-input type="number" placeholder="Custom">
+          </div>
+        </div>
+        <div>
+          <div id="peopleNumber">
+            <legend>Number of People</legend>
+          </div>
+          <input type="number" name="peopleTotal" id="peopleTotal" placeholder="0">
+        </div>
+      </form>
+      <div id="displayValues">
+        <div id="wrapper">
+          <div class="values">
+            <div class="textValue">
+              <h5>Tip Amount</h5>
+              <h6>/ person</h6>
+            </div>
+            <p data-tip class="amount">$0.00</p>
+          </div>
+          <div class="values">
+            <div class="textValue">
+              <h5>Total</h5>
+              <h6>/ person</h6>
+            </div>
+            <p data-total class="amount">$0.00</p>
+          </div>
+        </div>
+        <button data-reset-btn type="reset">Reset</button>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/JonathanCout">Jonathan Coutinho</a>.
+  </div>
+
+  <script src="./script/main.js"></script>
+</body>
+
+</html>

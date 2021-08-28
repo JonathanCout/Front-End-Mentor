@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+:root {
+  --cyanstr: hsl(172, 67%, 45%);
+  --cyandark: hsl(183, 100%, 15%);
+  --cyangraydark1: hsl(186, 14%, 43%);
+  --cyangraydark2:hsl(184, 14%, 56%);
+  --cyangraylight1: hsl(185, 41%, 84%);
+  --cyangraylight2:hsl(189, 41%, 97%);
+  --white:hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Space Mono', monospace;
+  font-size: 24px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body {
+  background-color: var(--cyangraylight1);
+}
+
+button {
+  cursor: pointer;
+}
+
+.card {
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.card .calculator {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  margin-top: 4rem;
+  background-color: var(--white);
+  border-radius: 30px;
+  padding: 0 1rem;
+  gap: 2rem;
+}
+
+.card .calculator form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1.5rem 1rem;
+  padding-right: 0;
+  gap: 1.5rem;
+}
+
+.card .calculator form legend {
+  color: var(--cyangraydark1);
+  font-weight: bold;
+  font-size: .6rem;
+  margin-bottom: .4rem;
+}
+
+.card .calculator form input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding-right: .5rem;
+  background-color: var(--cyangraylight2);
+  background-repeat: no-repeat;
+  background-position: .5rem;
+  background-size: 3%;
+  text-align: right;
+  color: var(--cyandark);
+  font-weight: bolder;
+  -webkit-transition-property: background transform;
+  transition-property: background transform;
+  -webkit-transition: 100ms ease-in-out;
+  transition: 100ms ease-in-out;
+}
+
+.card .calculator form #billCost {
+  background-image: url("../images/icon-dollar.svg");
+}
+
+.card .calculator form #billCost:focus {
+  -webkit-box-shadow: 0 0 0.1rem 0.08rem var(--cyanstr);
+          box-shadow: 0 0 0.1rem 0.08rem var(--cyanstr);
+}
+
+.card .calculator form #peopleNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card .calculator form #peopleNumber p {
+  font-size: .6rem;
+  color: orangered;
+  font-weight: bold;
+  margin-bottom: .1rem;
+}
+
+.card .calculator form #peopleTotal {
+  background-image: url("../images/icon-person.svg");
+}
+
+.card .calculator form #peopleTotal:focus {
+  -webkit-box-shadow: 0 0 0.1rem .08rem orange;
+          box-shadow: 0 0 0.1rem .08rem orange;
+}
+
+.card #buttons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (0.5fr)[3];
+      grid-template-columns: repeat(3, 0.5fr);
+  gap: .5rem;
+}
+
+.card #buttons input, .card #buttons button {
+  border: none;
+  background-color: var(--cyandark);
+  color: var(--white);
+  padding: .3rem 0;
+  font-size: .8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition-property: -webkit-filter transform background;
+  transition-property: -webkit-filter transform background;
+  transition-property: filter transform background;
+  transition-property: filter transform background, -webkit-filter transform background;
+  -webkit-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out;
+}
+
+.card #buttons input:hover, .card #buttons button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-filter: brightness(2);
+          filter: brightness(2);
+  -webkit-box-shadow: 0.1rem 0.1rem 0.2rem 0 var(--cyangraylight1);
+          box-shadow: 0.1rem 0.1rem 0.2rem 0 var(--cyangraylight1);
+}
+
+.card #buttons input:last-child, .card #buttons button:last-child {
+  color: var(--cyandark);
+  font-weight: 600;
+  background-color: var(--cyangraylight2);
+  text-align: right;
+  padding-right: .25rem;
+}
+
+.card #buttons input:last-child::-webkit-input-placeholder, .card #buttons button:last-child::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.card #buttons input:last-child:-ms-input-placeholder, .card #buttons button:last-child:-ms-input-placeholder {
+  text-align: center;
+}
+
+.card #buttons input:last-child::-ms-input-placeholder, .card #buttons button:last-child::-ms-input-placeholder {
+  text-align: center;
+}
+
+.card #buttons input:last-child::placeholder, .card #buttons button:last-child::placeholder {
+  text-align: center;
+}
+
+.card #buttons input:last-child:hover, .card #buttons button:last-child:hover {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.card #buttons input:last-child:focus, .card #buttons button:last-child:focus {
+  -webkit-transform: none;
+          transform: none;
+  -webkit-box-shadow: 0 0 0 0.15rem var(--cyanstr);
+          box-shadow: 0 0 0 0.15rem var(--cyanstr);
+}
+
+.card #displayValues {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: var(--cyandark);
+  border-radius: 20px;
+  margin: 1rem 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card #displayValues #wrapper {
+  padding: 1rem 2.5rem;
+}
+
+.card #displayValues #wrapper .values {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.card #displayValues #wrapper .values .textValue {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding-right: 1.8rem;
+}
+
+.card #displayValues #wrapper .values .textValue h5 {
+  font-size: .6rem;
+  font-weight: lighter;
+  color: var(--white);
+}
+
+.card #displayValues #wrapper .values .textValue h6 {
+  font-size: .5rem;
+  color: var(--cyangraydark2);
+}
+
+.card #displayValues #wrapper .values .amount {
+  padding-left: 2rem;
+  justify-self: flex-end;
+  font-size: 1.2rem;
+  color: var(--cyanstr);
+  font-weight: bold;
+}
+
+.card #displayValues button {
+  border: none;
+  margin: 1.2rem;
+  text-transform: uppercase;
+  background-color: var(--cyanstr);
+  opacity: .2;
+  font-size: .8rem;
+  font-weight: bold;
+  padding: .15rem 0;
+  -webkit-transition-property: -webkit-transform background opacity;
+  transition-property: -webkit-transform background opacity;
+  transition-property: transform background opacity;
+  transition-property: transform background opacity, -webkit-transform background opacity;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.card #displayValues button:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+@media (max-width: 375px) {
+  .card {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .card img {
+    margin-top: 2rem;
+  }
+  .card .calculator {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 1.8rem !important;
+    gap: 0;
+  }
+  .card .calculator form {
+    padding: 0;
+    padding-top: 1.5rem !important;
+  }
+  .card .calculator #buttons {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .card .calculator #displayValues #wrapper {
+    padding-top: 0;
+  }
+  .card .calculator #displayValues button {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
