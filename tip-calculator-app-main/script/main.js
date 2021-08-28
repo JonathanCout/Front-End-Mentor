@@ -51,7 +51,7 @@ const triggerEvent = () => {
     showValues()
 }
 peopleInput.addEventListener('keyup', triggerEvent)
-
+billInput.addEventListener('keyup', triggerEvent)
 resetBtn.addEventListener('click',() => {
     form.reset()
     tipAmount.textContent = '$0.00' 
