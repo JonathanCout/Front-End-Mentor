@@ -63,6 +63,7 @@ resetBtn.addEventListener('click',() => {
     form.reset()
     tipAmount.textContent = '$0.00' 
     totalAmount.textContent = '$0.00'
+    activeButtonHandler()
 })
 
 form.addEventListener('submit', (event) => {
