@@ -219,6 +219,10 @@ button {
     }
 }
 
+.active {
+    background-color: var(--white);
+}
+
 @media (max-width:375px) {
 .card {
     justify-content: space-between;

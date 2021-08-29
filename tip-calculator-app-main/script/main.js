@@ -19,6 +19,7 @@ gridButtons.forEach(btn => {
     btn.addEventListener('click',() => {
         getBtnValue(btn)
         triggerEvent()
+        btn.classList.toggle('active')
     })
 })
 
@@ -61,5 +62,6 @@ resetBtn.addEventListener('click',() => {
 form.addEventListener('submit', (event) => {
     event.preventDefault()
 })
+
 
 
