@@ -148,6 +148,15 @@ button {
   gap: .5rem;
 }
 
+.card #buttons .active {
+  background-color: var(--cyanstr);
+}
+
+.card #buttons .active:hover {
+  -webkit-filter: none;
+          filter: none;
+}
+
 .card #buttons input, .card #buttons button {
   border: none;
   background-color: var(--cyandark);

@@ -117,6 +117,14 @@ button {
         grid-template-columns: repeat(3,.5fr);
         gap: .5rem;
 
+        .active {
+            background-color: var(--cyanstr);
+
+            &:hover {
+                filter: none;
+            }
+        }
+
         input,button {
             border: none;
             background-color: var(--cyandark);
@@ -219,9 +227,6 @@ button {
     }
 }
 
-.active {
-    background-color: var(--white);
-}
 
 @media (max-width:375px) {
 .card {

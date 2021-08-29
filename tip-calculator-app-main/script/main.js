@@ -15,10 +15,16 @@ const getBtnValue = (btn) => {
     tipValue = parseInt(btn.textContent) / 100  
 }
 
+const activeButtonHandler = () => {
+    gridButtons.forEach(btn => btn.classList.remove('active'))
+    customInput.value = ''
+}
+
 gridButtons.forEach(btn => {
     btn.addEventListener('click',() => {
         getBtnValue(btn)
         triggerEvent()
+        activeButtonHandler()
         btn.classList.toggle('active')
     })
 })
