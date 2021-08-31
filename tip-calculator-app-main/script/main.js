@@ -15,20 +15,30 @@ const getBtnValue = (btn) => {
     tipValue = parseInt(btn.textContent) / 100  
 }
 
-const activeButtonHandler = () => {
-    gridButtons.forEach(btn => btn.classList.remove('active'))
-    customInput.value = ''
+const activeButtonHandler = (event = null) => {
+    gridButtons.forEach(button => {
+        if (button.classList.contains('active')) {
+            button.classList.remove('active')
+            return
+        }
+        if(event) {
+            event.classList.toggle('active')
+        }
+    } )
 }
 
 gridButtons.forEach(btn => {
     btn.addEventListener('click',() => {
         getBtnValue(btn)
         triggerEvent()
-        activeButtonHandler()
-        btn.classList.toggle('active')
+        activeButtonHandler(btn) 
+        customInput.value = '' 
     })
 })
 
+customInput.addEventListener('click',() => {
+    activeButtonHandler()
+})
 customInput.addEventListener('keyup', () => {
     tipValue = customInput.value / 100
     triggerEvent()
@@ -57,6 +67,7 @@ const triggerEvent = () => {
     text.remove()
     showValues()
 }
+
 peopleInput.addEventListener('keyup', triggerEvent)
 billInput.addEventListener('keyup', triggerEvent)
 resetBtn.addEventListener('click',() => {
