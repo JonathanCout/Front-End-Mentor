@@ -19,7 +19,7 @@ font-family: 'Fraunces', serif; */
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 a {
@@ -30,6 +30,10 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+ul {
+  list-style-type: none;
 }
 
 header {
@@ -46,30 +50,37 @@ header nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-top: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header nav img {
   padding-left: 2rem;
-  width: 15%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 header nav #dropdown {
-  display: none;
+  visibility: hidden;
   background-image: url("../images/icon-hamburger.svg");
-  min-height: 60%;
+  height: 1rem;
 }
 
-header nav #dropdown:focus + #links-handler #links {
+header nav #dropdown:focus + #links-handler ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header nav #links {
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding-right: 2rem;
 }
 
-header nav #links a {
+header nav ul li {
   text-align: center;
   padding: 1rem;
   margin-left: 1rem;
@@ -77,7 +88,12 @@ header nav #links a {
   font-family: 'Barlow', sans-serif;
 }
 
-header nav #links a:last-child {
+header nav ul li a {
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+header nav ul li:last-child {
   color: var(--dark-blue);
   text-transform: uppercase;
   font-weight: 900;
@@ -86,31 +102,44 @@ header nav #links a:last-child {
   font-family: 'Fraunces', serif;
 }
 
-header h1 {
-  text-align: center;
-  font-family: 'Fraunces', serif;
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: var(--white);
-  letter-spacing: .5rem;
-  margin: 2.5rem 0 6rem;
+header nav ul li:last-child a {
+  color: var(--dark-blue);
 }
 
-header #test {
+header #main-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 6rem;
+}
+
+header #main-title h1 {
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: .5rem;
+  margin-bottom: 6.5rem;
+}
+
+header #main-title img {
+  width: auto;
 }
 
 p {
-  padding: 2rem 0;
+  padding: 3rem 0;
   font-family: 'Barlow', sans-serif;
   color: var(--dark-gray-blue);
-  font-size: .9rem;
-  line-height: 1.3rem;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
 }
 
 #card-grid {
@@ -130,9 +159,6 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -142,17 +168,18 @@ p {
 #card-grid .card-text h3 {
   font-family: 'Fraunces', serif;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 2.7rem;
   color: var(--darker-desat-blue);
 }
 
 #card-grid .card-text a {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   text-transform: uppercase;
   color: var(--darker-desat-blue);
   font-family: 'Fraunces', serif;
-  font-size: .8rem;
+  font-size: 1.2rem;
   font-weight: 900;
   letter-spacing: .05rem;
   border-bottom: 2px ridge var(--yellow);
@@ -182,14 +209,14 @@ p {
       -ms-flex-pack: end;
           justify-content: flex-end;
   text-align: center;
-  padding: 2rem 7rem 3rem;
+  padding: 2rem 11rem 3rem;
 }
 
 #card-grid .card-description h5 {
   font-family: 'Fraunces', serif;
   font-weight: 900;
   color: var(--dark-desat-cyan);
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 #card-grid .card-description p {
@@ -210,13 +237,14 @@ p {
           flex-direction: column;
 }
 
-#clients-text h1 {
+#clients-text h2 {
   font-family: 'Fraunces', serif;
   text-align: center;
   color: var(--gray-blue);
   text-transform: uppercase;
   margin: 7rem 0 4rem;
   letter-spacing: .3rem;
+  font-size: 1.5rem;
 }
 
 #clients-text #clients-grid {
@@ -248,7 +276,7 @@ p {
 
 #clients-text #clients-grid .client-card p {
   text-align: center;
-  font-size: .8rem;
+  font-size: 1.1rem;
   color: var(--dark-blue);
   padding: 2.5rem 0 3rem;
 }
@@ -256,13 +284,12 @@ p {
 #clients-text #clients-grid .client-card p:last-child {
   color: var(--gray-blue);
   padding: 0;
-  font-size: .75rem;
 }
 
 #clients-text #clients-grid .client-card h5 {
   font-family: 'Fraunces', serif;
   font-weight: 900;
-  font-size: .9rem;
+  font-size: 1.2rem;
   padding-bottom: .3rem;
 }
 
@@ -301,7 +328,6 @@ footer img {
 
 footer ul {
   margin: 1.5rem 0 3rem;
-  list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -311,7 +337,6 @@ footer ul {
 footer ul a {
   color: var(--dark-desat-cyan);
   font-family: 'Barlow', sans-serif;
-  font-size: .8rem;
   font-weight: 500;
 }
 
@@ -337,11 +362,14 @@ footer #icons img {
 }
 
 @media (max-width: 1440px) {
+  header #main-title {
+    margin-top: 5rem;
+  }
   header h1 {
-    margin: 2.5rem 0 4.5rem;
+    margin-bottom: 5rem !important;
   }
   .card-text {
-    padding: 0 5rem !important;
+    padding: 0 4rem !important;
   }
   .card-description {
     padding: 2rem 5rem 0 !important;
@@ -380,18 +408,15 @@ footer #icons img {
     font-size: 1.5rem;
   }
   header nav {
-    display: block;
+    margin-right: 1rem;
   }
   header nav #dropdown {
-    display: inline;
-    position: relative;
-    left: 60%;
-    bottom: .5rem;
-  }
-  header nav img {
-    width: 30%;
+    visibility: visible !important;
   }
   header nav #links-handler {
+    position: absolute;
+    top: 10%;
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -399,9 +424,9 @@ footer #icons img {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  header nav #links-handler #links {
-    position: absolute;
-    width: 80%;
+  header nav #links-handler ul {
+    position: relative;
+    width: 92%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -411,15 +436,36 @@ footer #icons img {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-top: 1rem;
+    padding: 2rem 0;
+    gap: .7rem;
   }
-  header nav #links-handler #links a {
-    color: var(--dark-gray-blue);
+  header nav #links-handler ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 1rem solid transparent;
+    border-right-color: var(--white);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  header nav #links-handler ul li {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
+    margin-left: 0;
   }
-  header nav #links-handler #links a:last-child {
+  header nav #links-handler ul li a {
+    color: var(--dark-gray-blue);
+  }
+  header nav #links-handler ul li:last-child {
     background-color: var(--yellow);
+  }
+  header nav #links-handler ul li:last-child a {
+    color: var(--dark-blue);
   }
   #card-grid {
     -ms-grid-columns: 1fr;
@@ -463,6 +509,10 @@ footer #icons img {
 }
 
 @media (max-width: 425px) {
+  header h1 {
+    font-size: 2rem !important;
+    margin-bottom: 4rem !important;
+  }
   #card-grid {
     grid-auto-rows: initial;
   }
