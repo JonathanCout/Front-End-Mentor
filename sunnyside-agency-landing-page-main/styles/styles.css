@@ -78,6 +78,8 @@ header nav ul {
   display: -ms-flexbox;
   display: flex;
   padding-right: 2rem;
+  -webkit-animation: lower 400ms ease-in-out;
+          animation: lower 400ms ease-in-out;
 }
 
 header nav ul li {
@@ -528,6 +530,38 @@ footer #icons img {
   #img-grid {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@-webkit-keyframes lower {
+  0% {
+    -webkit-transform: translateY(-8%);
+            transform: translateY(-8%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes lower {
+  0% {
+    -webkit-transform: translateY(-8%);
+            transform: translateY(-8%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=styles.css.map */

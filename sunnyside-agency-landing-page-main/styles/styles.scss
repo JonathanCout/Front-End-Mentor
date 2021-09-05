@@ -58,6 +58,7 @@ header {
         ul {
             display: flex;
             padding-right:2rem;
+            animation: lower 400ms ease-in-out;
             
             li {
                 text-align: center;
@@ -488,4 +489,21 @@ footer {
     #img-grid {
         grid-template-columns: repeat(2,1fr);
     }
+}
+
+
+@keyframes lower {
+    0% {
+        transform: translateY(-8%);
+        opacity: 0;
+    }
+    50% {
+        
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
 }
